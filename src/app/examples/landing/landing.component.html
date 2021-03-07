@@ -1,24 +1,41 @@
-<div class="page-header" data-parallax="true" style="background-image: url('./assets/img/daniel-olahh.jpg');">
+<div *ngIf="isImageAvailable" class="page-header"  data-parallax="true"    style="background-image: url('./assets/img/hack/Home.jpg');" >
+    
     <div class="filter"></div>
     <div class="container">
         <div class="motto text-center">
-            <h1>Example page</h1>
-            <h3>Start designing your landing page here.</h3>
+            <h1 style="font-weight: bold;">Let's Discover Mars</h1>
+            <h3>With <span class="text-danger">MARN</span></h3>
             <br />
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-outline-neutral btn-round"><i class="fa fa-play"></i>Watch video</a>
-            <button type="button" class="btn btn-outline-neutral btn-round">Download</button>
+            <a  (click)="onChangeToVideo()" class="btn btn-outline-neutral btn-round"><i class="fa fa-play"></i>Watch video</a>
         </div>
     </div>
 </div>
-<div class="main">
-    <div class="section text-center">
+<div *ngIf="isVideoAvailable" class="page-header"  data-parallax="true"    style="background-image: url('./assets/img/hack/Home.jpg');" >
+    <video autoplay muted loop controls="controls" class="myVideo" *ngIf="isVideoAvailable">
+        <source src="./assets/video/video.mp4" type="video/mp4" />
+        </video>
+    <div class="filter"></div>
+    <div class="container">
+        <div class="motto text-center">
+            <h1>Let's Discover Mars</h1>
+            <h3>With MARN</h3>
+            <br />
+            <a  (click)="onVideoToImage()" class="btn btn-outline-neutral btn-round"><i class="fa fa-play"></i>Back To Image</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="main"  >
+    <div class="section text-center" style="background-image: url('./assets/img/hack/background.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
     <div class="container">
         <div class="row">
             <div class="col-md-8 mr-auto ml-auto">
-                <h2 class="title">Let's talk product</h2>
-                <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button if you want the user to see more.</h5>
+                <h2 class="title">Our Mission</h2>
+                <hr style="color: black;">
+                <!-- <h5 class="description">Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System.</h5> -->
                 <br>
-                <a href="#paper-kit" class="btn btn-danger btn-round">See Details</a>
+                <!-- <a href="#paper-kit" class="btn btn-danger btn-round">See Details</a> -->
             </div>
         </div>
         <br/><br/>
@@ -26,12 +43,12 @@
             <div class="col-md-3">
                 <div class="info">
                     <div class="icon icon-danger">
-                        <i class="nc-icon nc-album-2"></i>
+                        <i class="nc-icon nc-zoom-split"></i>
                     </div>
                     <div class="description">
-                        <h4 class="info-title">Beautiful Gallery</h4>
-                        <p class="description">Spend your time generating new ideas. You don't have to think of implementing.</p>
-                        <a href="#pkp" class="btn btn-link btn-danger">See more</a>
+                        <h4 class="info-title">Discover</h4>
+                        <p class="description" style="color: black;">Our Team are glad to help you to discover the world of Mars.</p>
+                        <!-- <a href="#pkp" class="btn btn-link btn-danger">See more</a> -->
                     </div>
                 </div>
             </div>
@@ -41,33 +58,33 @@
                         <i class="nc-icon nc-bulb-63"></i>
                     </div>
                     <div class="description">
-                        <h4 class="info-title">New Ideas</h4>
-                        <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient.</p>
-                        <a href="#pkp" class="btn btn-link btn-danger">See more</a>
+                        <h4 class="info-title">Creative Strategy</h4>
+                        <p style="color: black;">  Our Team is happy to share with you the creativate of our webSite.</p>
+                        <!-- <a href="#pkp" class="btn btn-link btn-danger">See more</a> -->
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="info">
                     <div class="icon icon-danger">
-                        <i class="nc-icon nc-chart-bar-32"></i>
+                        <i class= "nc-icon nc-laptop"></i>
                     </div>
                     <div class="description">
-                        <h4 class="info-title">Statistics</h4>
-                        <p>Choose from a veriety of many colors resembling sugar paper pastels.</p>
-                        <a href="#pkp" class="btn btn-link btn-danger">See more</a>
+                        <h4 class="info-title">Learning & Have Fun</h4>
+                        <p  style="color: black;">In our webSite you will get the opportunity to learn and have more fun with playing our quiz.</p>
+                        <!-- <a href="#pkp" class="btn btn-link btn-danger">See more</a> -->
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="info">
                     <div class="icon icon-danger">
-                        <i class="nc-icon nc-sun-fog-29"></i>
+                        <i class="nc-icon nc-trophy"></i>
                     </div>
                     <div class="description">
-                        <h4 class="info-title">Delightful design</h4>
-                        <p>Find unique and handmade delightful designs related items directly from our sellers.</p>
-                        <a href="#pkp" class="btn btn-link btn-danger">See more</a>
+                        <h4 class="info-title">Wining</h4>
+                        <p style="color: black;">Wining in our quiz will give you a chance to visit Mars.</p>
+                        <!-- <a href="#pkp" class="btn btn-link btn-danger">See more</a> -->
                     </div>
                 </div>
             </div>
@@ -76,25 +93,225 @@
     </div>
 </div>
 
+<div class="main"  >
+    <div class="section text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mr-auto ml-auto">
+                <h2 class="title text-danger">Let's Talk About MARS</h2>
+                <hr style="color: black;">
+                <h5 class="description">Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System.</h5>
+                <br>
+
+                <!-- <a href="#paper-kit" class="btn btn-danger btn-round">See Details</a> -->
+            </div>
+        </div>
+        <br/><br/>
+        <div class="row">
+            <div class="col-lg-6">
+                <div >
+                    <div class="card bg-light" >
+                        <div class="card-body ">
+                            <ul>
+                                <li>Moons: 2</li>
+                                <li>Mass: 11% of Earth</li>
+                                <li>Diameter: 4220 miles (6792 km)</li>
+                                <li>Year: 1.9 Earth years</li>
+                                <li>Day: 24.6 hours</li>
+                                <li>Average Temperature: minus 20°F (-28°C)</li>
+                                <li>Distance from the Sun: 4th planet from the sun, 142 million miles (228 million km)</li>
+                                <li>Type of Planet: Terrestrial (has a hard rocky surface)</li>
+                          </ul>
+                        </div>
+                      </div>
+                    <div class="description">
+                        
+                             <!-- <h4 class="info-title">Discover</h4> -->
+                        <!-- <p class="description">Spend your time generating new ideas. You don't have to think of implementing.</p> -->
+                        <!-- <a href="#pkp" class="btn btn-link btn-danger">See more</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="info">
+                    <div class="card bg-light"  >
+                        <div class="card-body ">
+                    <div class="description">
+                        <h4 class="info-title">Mars</h4>
+                        <p>Dimanche 11:00 PM.</p>
+                        <p>Temps clair avec quelques nuages.</p>
+                        <img src="./assets/img/hack/meteo.png" width="100" height="100"alt="...">
+                        <span style="font-size: 35px;">34°</span>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+
+        <br/><br/>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="./assets/img/hack/card1.jpg" alt="Avatar" style="width:300px;height:300px;">
+                      </div>
+                      <div class="flip-card-back">
+                        <h4>What is Mars like? </h4> 
+                        <br>
+                        <p>Mars is the 4th planet from the sun. It is a terrestrial planet which means that it has a hard rocky surface that you could walk on. Mars' surface is dry and much of it is covered with a reddish dust and rocks. When viewed from Earth, Mars appears to be the color red.</p> 
+                        <a href="#pkp" class="btn btn-link btn-white">See more</a> 
+                        <!-- <p>Mars has some of the most impressive natural geographical structures in the Solar System. Olympus Mons, a now dormant volcano, is the highest mountain in the Solar System. It is 3 times as high as Mount Everest and towers 16 miles above the Martian surface. Another major geographical structure of Mars is the great canyon, Valles Marineris. This canyon is the biggest in the Solar System. It is 4 miles deep in places and stretches for thousands of miles.</p> -->
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-3">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="./assets/img/hack/card2.jpg" alt="Avatar" style="width:300px;height:300px;">
+                      </div>
+                      <div class="flip-card-back">
+                        <h4>Weather on Mars</h4> 
+                        <br>
+                        <p>Mars often has huge dust storms with high speed winds. These dust storms are powered by the Sun and can grow to enormous proportions sending dust miles into the atmosphere and covering much of the planet. Some storms are so big they can be seen by amateur astronomers on Earth.</p> 
+                        <a href="#pkp" class="btn btn-link btn-white">See more</a> 
+                      </div>
+                    </div>
+                  </div>
+                  
+            </div>
+            <div class="col-md-3">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="./assets/img/hack/card3.jpg" alt="Avatar" style="width:300px;height:300px;">
+                      </div>
+                      <div class="flip-card-back">
+                        <h4>How does Mars compare to Earth?</h4> 
+                        <br>
+                        <p>In many ways, Mars is very similar to Earth. Mars' year and day are very similar to Earth compared to other planets. Mars is a terrestrial planet like Earth. Mars is quite a bit smaller than Earth both in diameter and in mass.</p> 
+                        <a href="#pkp" class="btn btn-link btn-white">See more</a> 
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-3">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="./assets/img/hack/card5.jpg" alt="Avatar" style="width:300px;height:300px;">
+                      </div>
+                      <div class="flip-card-back">
+                        <h4>How do we know about Mars?</h4> 
+                        <br>
+                        <p>Mars is one of the easiest planets to study from Earth. It is fairly close and, since it is further from the sun than us, it is easy to view in the night sky. The Mariner 4 spacecraft was the first to bring us close up pictures of Mars in 1965.</p> 
+                        <a href="#pkp" class="btn btn-link btn-white">See more</a> 
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="container">
+    <div class="section text-center" >
+
+    <h2 class="title text-danger">How MARN Works</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="main-timeline">
+                <a href="#" class="timeline">
+                    <div class="timeline-icon"><i class="nc-icon nc-circle-10"></i></div>
+                    <div class="timeline-content">
+                        <h3 class="title">Sign Up</h3>
+                        <p class="description">
+                            Sign up can Help you to discover more our web site.
+                        </p>
+                    </div>
+                </a>
+                <a href="#" class="timeline">
+                    <div class="timeline-icon"><i class="nc-icon nc-zoom-split"></i></div>
+                    <div class="timeline-content">
+                        <h3 class="title">Discover MARS</h3>
+                        <p class="description">
+                        The Section Let's Talk About MARS can help the candidate to increase your knowledge.
+                        </p>
+                    </div>
+                </a>
+                <a href="#" class="timeline">
+                    <div class="timeline-icon"><i class="nc-icon nc-trophy"></i></div>
+                    <div class="timeline-content">
+                        <h3 class="title">Quiz</h3>
+                        <p class="description">
+                            When we sign up we can play a quiz who gives us the opportunity to get a reduction for a ticket to MARS.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="main"  >
+    <div class="section text-center" id="carousel" style="background-image: url('./assets/img/hack/background.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">  
+
+    <div class="container">
+
+            <h2 class="title">Our gallery</h2>
+
+        <div class="row">
+            <div class="col-md-11 mr-auto ml-auto">
+                <div class="card page-carousel">
+                    <ngb-carousel>
+                        <ng-template ngbSlide>
+                            <img src="./assets/img/hack/mars1.jpg" alt="Random first slide">
+                            <div class="carousel-caption">
+                            </div>
+                        </ng-template>
+                        <ng-template ngbSlide>
+                            <img src="./assets/img/hack/mars2.jpg" alt="Random second slide">
+                            <div class="carousel-caption">
+                            </div>
+                        </ng-template>
+                        <ng-template ngbSlide>
+                            <img src="./assets/img/hack/mars3.jpg" alt="Random third slide">
+                            <div class="carousel-caption">
+                            </div>
+                        </ng-template>
+                    </ngb-carousel>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
 <div class="section section-dark text-center">
     <div class="container">
         <h2 class="title">Let's talk about us</h2>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="card card-profile card-plain">
                     <div class="card-avatar">
-                        <a href="#avatar"><img src="./assets/img/faces/clem-onojeghuo-3.jpg" alt="..."></a>
+                        <a href="#avatar"><img src="./assets/img/hack/Rahmao.jpg" alt="..."></a>
                     </div>
                     <div class="card-block">
                         <a href="#paper-kit">
                             <div class="author">
-                                <h4 class="card-title">Henry Ford</h4>
-                                <h6 class="card-category">Product Manager</h6>
+                                <h4 class="card-title">Rahma OUSELTI</h4>
+                                <h6 class="card-category">Software Engineer</h6>
                             </div>
                         </a>
-                        <p class="card-description text-center">
+                        <!-- <p class="card-description text-center">
                         Teamwork is so important that it is virtually impossible for you to reach the heights of your capabilities or make the money that you want without becoming very good at it.
-                        </p>
+                        </p> -->
                     </div>
                     <div class="card-footer text-center">
                         <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-twitter"></i></a>
@@ -104,21 +321,21 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="card card-profile card-plain">
                     <div class="card-avatar">
-                        <a href="#avatar"><img src="./assets/img/faces/joe-gardner-2.jpg" alt="..."></a>
+                        <a href="#avatar"><img src="./assets/img/hack/marwen.jpg" alt="..."></a>
                     </div>
                     <div class="card-block">
                         <a href="#paper-kit">
                             <div class="author">
-                                <h4 class="card-title">Sophie West</h4>
-                                <h6 class="card-category">Designer</h6>
+                                <h4 class="card-title">Marwen FRAJ</h4>
+                                <h6 class="card-category">Software Engineer</h6>
                             </div>
                         </a>
-                        <p class="card-description text-center">
+                        <!-- <p class="card-description text-center">
                         A group becomes a team when each member is sure enough of himself and his contribution to praise the skill of the others. No one can whistle a symphony. It takes an orchestra to play it.
-                        </p>
+                        </p> -->
                     </div>
                     <div class="card-footer text-center">
                         <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-twitter"></i></a>
@@ -128,21 +345,44 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="card card-profile card-plain">
                     <div class="card-avatar">
-                        <a href="#avatar"><img src="./assets/img/faces/erik-lucatero-2.jpg" alt="..."></a>
+                        <a href="#avatar"><img src="./assets/img/hack/nahrawen.jpg" alt="..."></a>
                     </div>
                     <div class="card-block">
                         <a href="#paper-kit">
                             <div class="author">
-                                <h4 class="card-title">Robert Orben</h4>
-                                <h6 class="card-category">Developer</h6>
+                                <h4 class="card-title">Nahrawene         BENHMIDA</h4>
+                                <h6 class="card-category">Software Engineer</h6>
                             </div>
                         </a>
-                        <p class="card-description text-center">
+                        <!-- <p class="card-description text-center">
                         The strength of the team is each individual member. The strength of each member is the team. If you can laugh together, you can work together, silence isn’t golden, it’s deadly.
-                        </p>
+                        </p> -->
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-twitter"></i></a>
+                        <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-google-plus"></i></a>
+                        <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-profile card-plain">
+                    <div class="card-avatar">
+                        <a href="#avatar"><img src="./assets/img/hack/Achref.jpg" alt="..."></a>
+                    </div>
+                    <div class="card-block">
+                        <a href="#paper-kit">
+                            <div class="author">
+                                <h4 class="card-title">Achref BENMOHAMED</h4>
+                                <h6 class="card-category">Software Engineer</h6>
+                            </div>
+                        </a>
+                        <!-- <p class="card-description text-center">
+                        The strength of the team is each individual member. The strength of each member is the team. If you can laugh together, you can work together, silence isn’t golden, it’s deadly.
+                        </p> -->
                     </div>
                     <div class="card-footer text-center">
                         <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-twitter"></i></a>
@@ -193,4 +433,5 @@
             </div>
         </div>
     </div>
+   
 </div>
